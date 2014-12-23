@@ -1,0 +1,30 @@
+﻿.botuni
+{
+    /* #3399FF  JE MODRO PLAVA KOJU TREBA POSTAVITI KAO START BOJU color: #ffffff;*/
+    font-size: 11px;
+    font-weight: bold;
+    font-family: Arial;
+    color: #99CCFF;
+    min-width: 54px;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: 0 none;
+    padding: 0 10px 2px;
+    border: 1px solid #4980C1;
+    border-radius: 2px 2px 2px 2px;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5384BE', endColorstr='#4386D7'); /* for IE */
+    /* for IE 8 and above */
+    /* for webkit browsers */
+}
+
+.botuni:hover
+{
+    cursor: pointer;
+      
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=' #85B6F0',
+ endColorstr='#579AEB'); /* for IE */
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=' #85B6F0',     endColorstr='#579AEB'); /* for IE 8 and above */
+    background: -webkit-gradient(linear, left top, left bottom, from(#85B6F0),     to(#579AEB)); /* for webkit browsers */
+    background: -moz-linear-gradient(top, #85B6F0, #579AEB); /* for firefox 3.6+ */
+    background: -o-linear-gradient(top, #85B6F0, #579AEB); /* for Opera */
+}

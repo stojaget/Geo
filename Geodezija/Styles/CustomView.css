@@ -1,0 +1,58 @@
+﻿TABLE.CustomView {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 10px;
+    width: 370px;
+    text-align: left;
+    border-collapse: collapse;
+    color: #272626;
+}
+TABLE.CustomView {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 15px 10px 15px 15px;
+    text-align: left;
+    border-collapse: collapse;
+    color: #272626;
+}
+TABLE.CustomView TR:hover TD {
+    background: #d0dafd url('table-images/gradhover.png') repeat-x;
+    color: #AC1D1D;
+}
+TABLE.CustomView tr.even td {
+        background:#6CC2F8;
+}
+TABLE.CustomView TH {
+    font-size: 19px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe url('table-images/gradhead.png') repeat-x;
+    border-top: 2px solid #d3ddff;
+    border-bottom: 1px solid #fff;
+    color: #272626;  
+}
+TABLE.CustomView TD {
+    padding: 8px; 
+    border-bottom: 1px solid #fff;
+    color: #272626;
+    border-top: 1px solid #fff;
+ border:1px solid #CCCCCC;
+   background: #e8edff url('table-images/gradback.png') repeat-x; 
+  
+}
+TABLE.CustomView  TR TH a,TABLE.CustomView TR TH a:visited
+{
+        color:Black;
+}
+ div#scroll  
+{
+border: 1px solid #C0C0C0;
+background-color: #F0F0F0;
+ color: #272626;
+width: 99%; 
+height: 746px; 
+overflow: scroll; 
+position: relative;
+left: 2px;
+top: 80%;
+}

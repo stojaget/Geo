@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="~/Pocetna.aspx" title="POČETNA"  description="Home" >
+       <siteMapNode url="~/Projekti.aspx" title="PREDMETI"  description="Predmeti" />
+      <siteMapNode url="~/Klijenti.aspx" title="KLIJENTI"  description="Klijenti">
+      <siteMapNode url="~/Kontakt.aspx" title="KONTAKTI"  description="Kontakti" />
+    </siteMapNode> 
+    <siteMapNode title="RADNICI"  description="Zaposlenici" >
+      <siteMapNode url="~/Zaposlenici.aspx" title="PREGLED PODATAKA"  description="Pregled podataka" />
+      <siteMapNode url="~/Vrijeme.aspx" title="EVID. VREMENA"  description="Evid. vremena" />
+      <siteMapNode url="~/Aktivnosti.aspx" title="AKTIVNOSTI"  description="Aktivnosti" />
+      <siteMapNode url="~/Kalendar.aspx" title="KALENDAR"  description="Kalendar" />
+    </siteMapNode>
+  
+ 
+    <siteMapNode  title="IZVJEŠĆA"  description="Izvješća" roles="Administrator,Manager" >
+      <siteMapNode url="~/Reports/IzvjDGUSva.aspx" title="Za DGU"  description="Za DGU" roles="Administrator,Manager" />
+      <siteMapNode url="~/Reports/IzvjPoslovanje.aspx" title="O POSLOVANJU"  description="Poslovanje" roles="Administrator,Manager" />
+      <siteMapNode url="~/Reports/IzvjDjelatnika.aspx" title="O DJELATNICIMA"  description="O djelatnicima" roles="Administrator,Manager" />
+    </siteMapNode>
+    <siteMapNode url="~/Obavijesti.aspx" title="INFO"  description="Obavijesti i informacije" />
+    <siteMapNode  title="ADMIN."  description="Upravljanje postavkama"  >
+      <siteMapNode url="~/Pomoc.aspx" title="ŠIFARNICI"  description="Šifarnici" />
+      <siteMapNode url="~/FileManager/Arhiva.aspx" title="ARHIVA"  description="Arhiva" />
+        <siteMapNode  title="KREIRANJE KORISNIKA"
+                        url="~/User_Create.aspx"
+                        description="KREIRANJE NOVIH KORISNIKA"
+                        roles="Administrator,Manager" />
+
+        <siteMapNode  title="PROMJENA KORISNIČKIH PODATAKA"
+                            url="~/User_List.aspx"
+                            description="Promjena kor. podataka"
+                            roles="Administrator,Manager" />
+
+        <!--<siteMapNode url="~/UserEdit.aspx" title="Upravljanje korisnicima"  description="Upravljanje korisnicima" />-->
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

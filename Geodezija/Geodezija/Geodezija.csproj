@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37AD194E-C8E3-46ED-88B8-7DFE69936ADD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Geodezija</RootNamespace>
+    <AssemblyName>Geodezija</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.930, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.7.0930\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\..\..\..\..\JN_SATK_01022013\JN_SATK_28012013\D46JavnaNabavaAPIS_backup\JavnaNabava\bin\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\..\..\..\..\JN_SATK_01022013\JN_SATK_28012013\D46JavnaNabavaAPIS_backup\JavnaNabava\bin\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="AsposeCells">
+      <HintPath>..\..\..\..\..\JN_SATK_01022013\JN_SATK_28012013\D46JavnaNabavaAPIS_backup\JavnaNabava\bin\AsposeCells.dll</HintPath>
+    </Reference>
+    <Reference Include="DayPilot, Version=3.2.249.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\PdfGenerator_CS\PdfGenerator_CS\PdfGenerator\bin\Release\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Aktivnosti.aspx" />
+    <Content Include="App_Data\Geoistra.mdf" />
+    <Content Include="App_Data\Geoistra_log.ldf">
+      <DependentUpon>Geoistra.mdf</DependentUpon>
+    </Content>
+    <Content Include="Biljeske.aspx" />
+    <Content Include="botuni.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DownloadFile.aspx" />
+    <Content Include="FileManager\Arhiva.aspx" />
+    <Content Include="FileManager\FileGrid.ascx" />
+    <Content Include="FileManager\Images\folder.png" />
+    <Content Include="Kalendar.aspx" />
+    <Content Include="Izvjesća.aspx" />
+    <Content Include="Klijenti.aspx" />
+    <Content Include="KlijentiCRUD.aspx" />
+    <Content Include="Loko.aspx" />
+    <Content Include="Pomoc.aspx" />
+    <Content Include="Prilozi.aspx" />
+    <Content Include="Projekti.aspx" />
+    <Content Include="ProjektiCRUD.aspx" />
+    <Content Include="Reports\IzvjDGUSva.aspx" />
+    <Content Include="Reports\IzvjDjelatnika.aspx" />
+    <Content Include="Reports\IzvjPoslovanje.aspx" />
+    <Content Include="Scripts\hajan.datevalidator.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Scripts\jquery.datepick.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\langs\jquery.datepick-hr.js" />
+    <Content Include="Security\Log.aspx" />
+    <Content Include="Security\Registracija.aspx" />
+    <Content Include="Styles\cal.png" />
+    <Content Include="Styles\CustomView.css" />
+    <Content Include="Styles\geoistra.gif" />
+    <Content Include="Styles\goeistra.png" />
+    <Content Include="Styles\GridStyle.css" />
+    <Content Include="Styles\GridView.css" />
+    <Content Include="Styles\table-images\back.png" />
+    <Content Include="Styles\table-images\blurry.jpg" />
+    <Content Include="Styles\table-images\botleft.png" />
+    <Content Include="Styles\table-images\botright.png" />
+    <Content Include="Styles\table-images\gradback.png" />
+    <Content Include="Styles\table-images\gradhead.png" />
+    <Content Include="Styles\table-images\gradhover.png" />
+    <Content Include="Styles\table-images\header.jpg" />
+    <Content Include="Styles\table-images\left.png" />
+    <Content Include="Styles\table-images\pattern-head.png" />
+    <Content Include="Styles\table-images\pattern.gif" />
+    <Content Include="Styles\table-images\pattern.png" />
+    <Content Include="Styles\table-images\patternb-head.png" />
+    <Content Include="Styles\table-images\patternb.png" />
+    <Content Include="Styles\table-images\right.png" />
+    <Content Include="Styles\images\animated-overlay.gif" />
+    <Content Include="Styles\images\excel_lrg.png" />
+    <Content Include="Styles\images\folder.png" />
+    <Content Include="Styles\images\pdf_icon.gif" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Styles\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Styles\images\ui-icons_999999_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Styles\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Styles\jquery.datepick.css" />
+    <Content Include="Styles\jquery.ui.all.css" />
+    <Content Include="Styles\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery.ui.base.css" />
+    <Content Include="Styles\jquery.ui.button.css" />
+    <Content Include="Styles\jquery.ui.core.css" />
+    <Content Include="Styles\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery.ui.theme.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Pocetna.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Terenski.aspx" />
+    <Content Include="timetracker.css" />
+    <Content Include="Uplatnica.aspx" />
+    <Content Include="ViewFile.aspx" />
+    <Content Include="Vrijeme.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="ZaposlCRUD.aspx" />
+    <Content Include="Zaposlenici.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aktivnosti.aspx.cs">
+      <DependentUpon>Aktivnosti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aktivnosti.aspx.designer.cs">
+      <DependentUpon>Aktivnosti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biljeske.aspx.cs">
+      <DependentUpon>Biljeske.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biljeske.aspx.designer.cs">
+      <DependentUpon>Biljeske.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileManager\Arhiva.aspx.cs">
+      <DependentUpon>Arhiva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\Arhiva.aspx.designer.cs">
+      <DependentUpon>Arhiva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FileManager\FileGrid.ascx.cs">
+      <DependentUpon>FileGrid.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FileManager\FileGrid.ascx.designer.cs">
+      <DependentUpon>FileGrid.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FileManager\FileSystemItemCS.cs" />
+    <Compile Include="GridViewExportUtil.cs" />
+    <Compile Include="Narucitelj.cs" />
+    <Compile Include="PDFs\Klase\PDFCheckBoxFieldType.cs" />
+    <Compile Include="PDFs\Klase\PDFFieldType.cs" />
+    <Compile Include="PDFs\Klase\PDFHelper.cs" />
+    <Compile Include="PDFs\Klase\PDFOtherFieldType.cs" />
+    <Compile Include="PDFs\Klase\PDFTextFieldType.cs" />
+    <Compile Include="Pocetna.aspx.cs">
+      <DependentUpon>Pocetna.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pocetna.aspx.designer.cs">
+      <DependentUpon>Pocetna.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadFile.aspx.cs">
+      <DependentUpon>DownloadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kalendar.aspx.cs">
+      <DependentUpon>Kalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kalendar.aspx.designer.cs">
+      <DependentUpon>Kalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DGUPredani.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DGUPredani.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DGUUkupno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DGUUkupno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExportExcel.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Izvjesća.aspx.cs">
+      <DependentUpon>Izvjesća.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Izvjesća.aspx.designer.cs">
+      <DependentUpon>Izvjesća.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Klijent.cs" />
+    <Compile Include="Klijenti.aspx.cs">
+      <DependentUpon>Klijenti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Klijenti.aspx.designer.cs">
+      <DependentUpon>Klijenti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KlijentiCRUD.aspx.cs">
+      <DependentUpon>KlijentiCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KlijentiCRUD.aspx.designer.cs">
+      <DependentUpon>KlijentiCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loko.aspx.cs">
+      <DependentUpon>Loko.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loko.aspx.designer.cs">
+      <DependentUpon>Loko.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loko.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pomoc.aspx.cs">
+      <DependentUpon>Pomoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pomoc.aspx.designer.cs">
+      <DependentUpon>Pomoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Predmet.cs" />
+    <Compile Include="Prilozi.aspx.cs">
+      <DependentUpon>Prilozi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prilozi.aspx.designer.cs">
+      <DependentUpon>Prilozi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prilozi.cs" />
+    <Compile Include="Projekti.aspx.cs">
+      <DependentUpon>Projekti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Projekti.aspx.designer.cs">
+      <DependentUpon>Projekti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProjektiCRUD.aspx.cs">
+      <DependentUpon>ProjektiCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProjektiCRUD.aspx.designer.cs">
+      <DependentUpon>ProjektiCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\EvidRadnici.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvidRadnici.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\EvidRazdoblje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvidRazdoblje.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IzvjDGUSva.aspx.cs">
+      <DependentUpon>IzvjDGUSva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\IzvjDGUSva.aspx.designer.cs">
+      <DependentUpon>IzvjDGUSva.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IzvjDjelatnika.aspx.cs">
+      <DependentUpon>IzvjDjelatnika.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\IzvjDjelatnika.aspx.designer.cs">
+      <DependentUpon>IzvjDjelatnika.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\IzvjPoslovanje.aspx.cs">
+      <DependentUpon>IzvjPoslovanje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\IzvjPoslovanje.aspx.designer.cs">
+      <DependentUpon>IzvjPoslovanje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\KlijentiPoRazdoblju.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KlijentiPoRazdoblju.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LokoRadnici.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LokoRadnici.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\LokoRazdbolje.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LokoRazdbolje.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PredaniNeplaceni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PredaniNeplaceni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PredaniPlaceni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PredaniPlaceni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Terenski.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Terenski.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TerenskiPoRadniku.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TerenskiPoRadniku.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UgovoreniNeplaceni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UgovoreniNeplaceni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\UgovoreniPlaceni.cs">
+      <DependentUpon>UgovoreniPlaceni.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\UgovoreniPlaceni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UgovoreniPlaceni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Log.aspx.cs">
+      <DependentUpon>Log.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\Log.aspx.designer.cs">
+      <DependentUpon>Log.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Registracija.aspx.cs">
+      <DependentUpon>Registracija.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\Registracija.aspx.designer.cs">
+      <DependentUpon>Registracija.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs" />
+    <Compile Include="Terenski.aspx.cs">
+      <DependentUpon>Terenski.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Terenski.aspx.designer.cs">
+      <DependentUpon>Terenski.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ter.cs" />
+    <Compile Include="Uplatnica.aspx.cs">
+      <DependentUpon>Uplatnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Uplatnica.aspx.designer.cs">
+      <DependentUpon>Uplatnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFile.aspx.cs">
+      <DependentUpon>ViewFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vrijeme.aspx.cs">
+      <DependentUpon>Vrijeme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vrijeme.aspx.designer.cs">
+      <DependentUpon>Vrijeme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vrijeme.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VrstaPosla.cs" />
+    <Compile Include="ZaposlCRUD.aspx.cs">
+      <DependentUpon>ZaposlCRUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZaposlCRUD.aspx.designer.cs">
+      <DependentUpon>ZaposlCRUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenici.aspx.cs">
+      <DependentUpon>Zaposlenici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Zaposlenici.aspx.designer.cs">
+      <DependentUpon>Zaposlenici.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Zaposlenik.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DGU_Ukupno.mht" />
+    <Content Include="packages.config" />
+    <None Include="PDFs\HUB 3A_interaktivni.pdf" />
+    <None Include="PDFs\HUB-3Atem2.pdf" />
+    <None Include="PDFs\HUB-3A_TEMP.pdf" />
+    <None Include="PDFs\HUB-3A_TEMP12.pdf" />
+    <None Include="Reports\DGUPredani.xsc">
+      <DependentUpon>DGUPredani.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DGUPredani.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DGUPredani.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DGUPredani.xss">
+      <DependentUpon>DGUPredani.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DGUUkupno.xsc">
+      <DependentUpon>DGUUkupno.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DGUUkupno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DGUUkupno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DGUUkupno.xss">
+      <DependentUpon>DGUUkupno.xsd</DependentUpon>
+    </None>
+    <None Include="Predlosci\Ponuda.docx" />
+    <None Include="Predlosci\Racuni.docx" />
+    <None Include="Properties\PublishProfiles\proba.pubxml" />
+    <None Include="Reports\EvidRadnici.xsc">
+      <DependentUpon>EvidRadnici.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\EvidRadnici.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EvidRadnici.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\EvidRadnici.xss">
+      <DependentUpon>EvidRadnici.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\EvidRazdoblje.xsc">
+      <DependentUpon>EvidRazdoblje.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\EvidRazdoblje.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EvidRazdoblje.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\EvidRazdoblje.xss">
+      <DependentUpon>EvidRazdoblje.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\KlijentiPoRazdoblju.xsc">
+      <DependentUpon>KlijentiPoRazdoblju.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\KlijentiPoRazdoblju.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KlijentiPoRazdoblju.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\KlijentiPoRazdoblju.xss">
+      <DependentUpon>KlijentiPoRazdoblju.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\LokoRadnici.xsc">
+      <DependentUpon>LokoRadnici.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\LokoRadnici.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LokoRadnici.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\LokoRadnici.xss">
+      <DependentUpon>LokoRadnici.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\LokoRazdbolje.xsc">
+      <DependentUpon>LokoRazdbolje.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\LokoRazdbolje.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LokoRazdbolje.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\LokoRazdbolje.xss">
+      <DependentUpon>LokoRazdbolje.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PredaniNeplaceni.xsc">
+      <DependentUpon>PredaniNeplaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PredaniNeplaceni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PredaniNeplaceni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\PredaniNeplaceni.xss">
+      <DependentUpon>PredaniNeplaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PredaniPlaceni.xsc">
+      <DependentUpon>PredaniPlaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PredaniPlaceni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PredaniPlaceni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\PredaniPlaceni.xss">
+      <DependentUpon>PredaniPlaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Terenski.xsc">
+      <DependentUpon>Terenski.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\Terenski.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Terenski.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\Terenski.xss">
+      <DependentUpon>Terenski.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TerenskiPoRadniku.xsc">
+      <DependentUpon>TerenskiPoRadniku.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TerenskiPoRadniku.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TerenskiPoRadniku.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\TerenskiPoRadniku.xss">
+      <DependentUpon>TerenskiPoRadniku.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\UgovoreniNeplaceni.xsc">
+      <DependentUpon>UgovoreniNeplaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\UgovoreniNeplaceni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UgovoreniNeplaceni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\UgovoreniNeplaceni.xss">
+      <DependentUpon>UgovoreniNeplaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\UgovoreniPlaceni.xsc">
+      <DependentUpon>UgovoreniPlaceni.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\UgovoreniPlaceni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UgovoreniPlaceni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\UgovoreniPlaceni.xss">
+      <DependentUpon>UgovoreniPlaceni.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Popunjeni\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\DGUPredani.rdlc" />
+    <EmbeddedResource Include="Reports\DGUUkupno.rdlc" />
+    <EmbeddedResource Include="Reports\EvidencijaPoRadniku.rdlc" />
+    <EmbeddedResource Include="Reports\EvidencijaPoRazdoblju.rdlc" />
+    <EmbeddedResource Include="Reports\KlijentiPoRazdoblju.rdlc" />
+    <EmbeddedResource Include="Reports\LokoPoRadniku.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\LokoPoRazdoblju.rdlc" />
+    <EmbeddedResource Include="Reports\PopisKlijenataPoRazdoblju.rdlc" />
+    <EmbeddedResource Include="Reports\PredaniNeplaceniProjekti.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PredaniPlaceniProjekti.rdlc" />
+    <EmbeddedResource Include="Reports\TerenskiPoRadniku.rdlc" />
+    <EmbeddedResource Include="Reports\TerenskiRazdoblje.rdlc" />
+    <EmbeddedResource Include="Reports\UgovoreniNeplaceni.rdlc" />
+    <EmbeddedResource Include="Reports\UgovoreniPlaceni.rdlc" />
+    <EmbeddedResource Include="Reports\Uplatnica.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3134</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
