@@ -123,6 +123,7 @@ namespace Geodezija
             else
             {
                 poruka = "Uspješno je obavljena promjena korisničkih podataka za korisnika " + txtUser.Text;
+                //ako nije upiso novi pass
                 if (txtPass.Text.Trim() == "")
                 {
                     string[] role = null;
