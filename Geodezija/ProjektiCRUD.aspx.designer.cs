@@ -913,24 +913,6 @@ namespace Geodezija {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator5;
         
         /// <summary>
-        /// txtPredaja control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPredaja;
-        
-        /// <summary>
-        /// CompareValidator6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator6;
-        
-        /// <summary>
         /// txtPotvrda control.
         /// </summary>
         /// <remarks>
@@ -965,6 +947,24 @@ namespace Geodezija {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUrud;
+        
+        /// <summary>
+        /// txtPredaja control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPredaja;
+        
+        /// <summary>
+        /// CompareValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator6;
         
         /// <summary>
         /// txtDatAzu control.

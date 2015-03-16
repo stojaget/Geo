@@ -1014,7 +1014,7 @@
                 </tr>
                 <tr>
                     <td class="style66">
-                        Dat. predaje DGU:
+                        DGU DAT. PODNOŠENJA ZAHTJEVA ZA PREGLED I OVJERU:
                     </td>
                     <td class="style13">
                         <asp:TextBox ID="txtDatPredajeDgu" runat="server" Width="173px" CssClass="Pokupi"
@@ -1024,21 +1024,10 @@
                             Operator="DataTypeCheck" Type="Date" ControlToValidate="txtDatPredajeDgu" ForeColor="Red"></asp:CompareValidator>
                     </td>
                 </tr>
+               
                 <tr>
                     <td class="style66">
-                        Dat. predaje:
-                    </td>
-                    <td class="style13">
-                        <asp:TextBox ID="txtPredaja" runat="server" CssClass="Pokupi" Width="173px" Height="21px"></asp:TextBox>
-                        <%--<script type="text/javascript" src="Scripts/langs/jquery.datepick-hr.js"></script>--%>
-                        <asp:CompareValidator ID="CompareValidator6" runat="server" Display="Dynamic" ErrorMessage="Format datuma je pogrešan"
-                            Operator="DataTypeCheck" Type="Date" ControlToValidate="txtPredaja" ForeColor="Red"></asp:CompareValidator>
-                        <%--class="field"--%>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="style66">
-                        Dat. potvrde:
+                        DGU DAT. POTVRDE ELABORATA:
                     </td>
                     <td class="style13">
                         <asp:TextBox ID="txtPotvrda" runat="server" CssClass="Pokupi" Width="173px" Height="21px"></asp:TextBox>
@@ -1050,7 +1039,7 @@
                 </tr>
                 <tr>
                     <td class="style43">
-                        DGU klasa:
+                        DGU KLASA ZAPRIMLJENOG PREDMETA:
                     </td>
                     <td class="style44">
                         <asp:TextBox ID="txtKlasa" style="text-align: left"  runat="server" Width="281px"></asp:TextBox>
@@ -1058,13 +1047,26 @@
                 </tr>
                 <tr>
                     <td class="style43">
-                        DGU urudžbeni:
+                        DGU URUDŽBENI:
                     </td>
                     <td class="style44">
                         <asp:TextBox ID="txtUrud" runat="server" style="text-align: left"  Width="281px"></asp:TextBox>
                     </td>
                 </tr>
-                <tr>
+               
+                    <tr>
+                    <td class="style66">
+                        PREDAJA ELABORATA NARUČITELJU:
+                    </td>
+                    <td class="style13">
+                        <asp:TextBox ID="txtPredaja" runat="server" CssClass="Pokupi" Width="173px" Height="21px"></asp:TextBox>
+                        <%--<script type="text/javascript" src="Scripts/langs/jquery.datepick-hr.js"></script>--%>
+                        <asp:CompareValidator ID="CompareValidator6" runat="server" Display="Dynamic" ErrorMessage="Format datuma je pogrešan"
+                            Operator="DataTypeCheck" Type="Date" ControlToValidate="txtPredaja" ForeColor="Red"></asp:CompareValidator>
+                        <%--class="field"--%>
+                    </td>
+                </tr>
+                    <tr>
                     <td class="style43">
                         Dat. ažuriranja:
                     </td>

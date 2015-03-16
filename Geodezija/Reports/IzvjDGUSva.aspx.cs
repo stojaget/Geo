@@ -45,9 +45,10 @@ namespace Geodezija.Reports
             {
                 case 1: PokaziReport(odd, dod, "spGodisnjeDgu", Server.MapPath(@"~\Reports\DGUUkupno.rdlc"));
                     break;
-                case 3: PokaziReport(odd, dod, "spGodisnjeDguPredani", Server.MapPath(@"~\Reports\DGUPredani.rdlc"));
+                case 3: PokaziReport(odd, dod, "spUpisnik", Server.MapPath(@"~\Reports\Upisnik.rdlc")); 
+                   
                     break;
-                case 2: PokaziReport(odd, dod, "spGodDguObavljeni", Server.MapPath(@"~\Reports\DGUObavljeni.rdlc"));
+                case 2:  PokaziReport(odd, dod, "spGodisnjeDguPredani", Server.MapPath(@"~\Reports\DGUPredani.rdlc"));
                     break;
                
                 default:
@@ -72,8 +73,12 @@ namespace Geodezija.Reports
 
             adpt.Fill(dataSet, "Djelatnici");
             ReportDataSource repDs = new ReportDataSource("DataSet1", dataSet.Tables[0]);
-
-
+            if (proc.Contains("spUpisnik"))
+            {
+               repDs = new ReportDataSource("dsUpisnik", dataSet.Tables[0]);
+            }
+           
+            
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
             ReportViewer1.LocalReport.ReportPath = putanja;
 

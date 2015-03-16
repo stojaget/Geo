@@ -88,7 +88,7 @@ namespace Geodezija
         }
         private void NapuniGrid()
         {
-            DateTime odd, dod;
+            DateTime odd, dod, dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
             odd = new DateTime(2001, 1, 1);
             dod = new DateTime(2055, 1, 1);
             int vrsta = -1;
@@ -96,6 +96,10 @@ namespace Geodezija
             string kat = "";
             int klijent = -1;
             string zavrsio = "";
+            dguPodnesenOD = new DateTime(2001, 1, 1);
+            dguPodnesenDO = new DateTime(2055, 1, 1);
+            dguPotvrdenOD = new DateTime(2001, 1, 1);
+            dguPotvrdenDO = new DateTime(2055, 1, 1);
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["GeoistraConnectionString1"].ConnectionString;
@@ -110,6 +114,10 @@ namespace Geodezija
             cmd.Parameters.AddWithValue("@ZAVRSIO", DBNull.Value);
             cmd.Parameters.AddWithValue("@OD", odd);
             cmd.Parameters.AddWithValue("@DO", dod);
+            cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
+            cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
+            cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
+            cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dset = new DataSet();
             adapter.Fill(dset, "t1");
@@ -541,7 +549,7 @@ namespace Geodezija
             //,'Sebina', 'sebina') FROM Projekt WHERE CHARINDEX('Sebina',CAST(zavrsio as nvarchar(50)))>0
 
 
-            DateTime odd, dod;
+            DateTime odd, dod, dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
             int vrsta = Convert.ToInt32(ddlVrsta.SelectedValue);
             int status = Convert.ToInt32(ddlStatus.SelectedValue);
             int kat = Convert.ToInt32(ddlKat.SelectedValue);
@@ -562,7 +570,38 @@ namespace Geodezija
             {
                 dod = Convert.ToDateTime(txtZavrsDo.Text);
             }
-
+            if (txtDguPodnesenOd.Text == string.Empty)
+            {
+                dguPodnesenOD  = new DateTime(2001, 1, 1);
+            }
+            else
+            {
+                dguPodnesenOD = Convert.ToDateTime(txtDguPodnesenOd.Text);
+            }
+            if (txtDguPodnesenDo.Text == string.Empty)
+            {
+                dguPodnesenDO = DateTime.Now.AddYears(10);
+            }
+            else
+            {
+                dguPodnesenDO = Convert.ToDateTime(txtDguPodnesenDo.Text);
+            }
+            if (txtDguPotvrdenOd.Text== string.Empty)
+            {
+                dguPotvrdenOD = new DateTime(2001, 1, 1);
+            }
+            else
+            {
+                dguPotvrdenOD = Convert.ToDateTime(txtDguPotvrdenOd.Text);
+            }
+            if (txtDguPotvrdenDo.Text == string.Empty)
+            {
+                dguPotvrdenDO = DateTime.Now.AddYears(10);
+            }
+            else
+            {
+                dguPotvrdenDO = Convert.ToDateTime(txtDguPotvrdenDo.Text);
+            }
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["GeoistraConnectionString1"].ConnectionString;
             conn.Open();
@@ -617,6 +656,10 @@ namespace Geodezija
 
             cmd.Parameters.AddWithValue("@OD", odd);
             cmd.Parameters.AddWithValue("@DO", dod);
+            cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
+            cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
+            cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
+            cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dset = new DataSet();
             adapter.Fill(dset, "t1");

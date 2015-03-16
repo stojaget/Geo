@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
     CodeBehind="IzvjPoslovanje.aspx.cs" Inherits="Geodezija.Reports.IzvjPoslovanje" %>
 
-<%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-    Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
+
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="Stylesheet" type="text/css" href="../Styles/jquery.datepick.css" />
     <link rel="Stylesheet" type="text/css" href="../Styles/style.css" />
@@ -55,7 +55,7 @@
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
             </p>
-            <rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="#6699FF" Width="98%">
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server">
             </rsweb:ReportViewer>
             <p>
                 &nbsp;</p>

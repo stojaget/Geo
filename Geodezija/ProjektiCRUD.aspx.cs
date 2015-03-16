@@ -979,10 +979,12 @@ namespace Geodezija
             DateTime.TryParse(txtDatPredajeDgu.Text, out datpreddgu);
             string ugov = datpreddgu.ToShortDateString();
             cmd.Parameters.AddWithValue("@dat_predajedgu", Convert.ToDateTime(ugov) == DateTime.MinValue ? DBNull.Value : (object)ugov);
+           
             DateTime.TryParse(txtPredaja.Text, out predaja);
             string pred = predaja.ToShortDateString();
 
             cmd.Parameters.AddWithValue("@dat_predaja", Convert.ToDateTime(pred) == DateTime.MinValue ? DBNull.Value : (object)pred);
+          
             DateTime.TryParse(txtPotvrda.Text, out potvrda);
             string potvrd = potvrda.ToShortDateString();
             cmd.Parameters.AddWithValue("@dat_potvrde", Convert.ToDateTime(potvrd) == DateTime.MinValue ? DBNull.Value : (object)potvrd);

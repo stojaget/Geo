@@ -25,6 +25,10 @@
 
             $("#<%= txtZavrsOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
             $("#<%= txtZavrsDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+            $("#<%= txtDguPodnesenOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+            $("#<%= txtDguPodnesenDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+            $("#<%= txtDguPotvrdenOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+            $("#<%= txtDguPotvrdenDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
             $.datepick.setDefaults($.datepick.regional['hr']);
         });
     </script>
@@ -164,53 +168,48 @@
             div2.scrollLeft = div.scrollLeft;
             return false;
         }
-    
+
     </script>
     <style type="text/css">
-        table
-        {
+        table {
         }
-        
-        td
-        {
+
+        td {
         }
-        th
-        {
+
+        th {
         }
     </style>
     <style type="text/css">
-        div#scroll
-        {
+        div#scroll {
             border: 1px solid #C0C0C0;
             background-color: #F0F0F0;
             width: 99%;
             height: 90%;
-           <%-- overflow: scroll;--%>
-            position: relative;
+            <%-- overflow: scroll;
+            --%> position: relative;
             left: 9px;
             top: 80%;
         }
-        .CustomView
-        {
+
+        .CustomView {
         }
-        .CustomGrid
-        {
+
+        .CustomGrid {
         }
     </style>
     <style type="text/css">
-        .even
-        {
+        .even {
             background: #58FAAC;
         }
-        .GridViewStyle
-        {
+
+        .GridViewStyle {
             font-family: Verdana;
             font-size: 11px;
             background-color: White;
         }
-        
-        .GridViewHeaderStyle
-        {
+
+        .GridViewHeaderStyle {
             font-family: Verdana;
             font-size: 15px;
             color: White;
@@ -218,11 +217,13 @@
         }
     </style>
     <style>
-        a.linkbutton, a.linkbutton:visited, a.linkbutton img
-        {
+        a.linkbutton, a.linkbutton:visited, a.linkbutton img {
             border: none;
             outline: none;
             color: Black;
+        }
+        .auto-style1 {
+            width: 50%;
         }
     </style>
 </asp:Content>
@@ -243,6 +244,7 @@
                 &nbsp;
                 <asp:Button ID="Button1" runat="server" CssClass="botuni" Height="24px" OnClick="Button1_Click"
                     Text="Unesi novi" Width="97px" />
+
             </h2>
             <legend>PREGLED PREDMETA</legend>
             <asp:SqlDataSource ID="sdsStatusi" runat="server" ConnectionString="<%$ ConnectionStrings:GeoistraConnectionString1 %>"
@@ -252,37 +254,31 @@
             <table style="width: 98%; height: 30px;" border="0" cellpadding="0" cellspacing="1"
                 class="GridviewTable">
                 <tr>
-                    <td style="width: 20%;" align="left">
-                        Klijent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td align="left" class="auto-style1">Klijent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="ddlKlij" runat="server" Width="130px" Font-Size="11px" AppendDataBoundItems="True">
                             <asp:ListItem Text="Svi" Value="-1"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td style="width: 20%;">
-                        Završio:
+                    <td style="width: 20%;">Završio:
                         <asp:DropDownList ID="ddlZavrsio" runat="server" Width="130px" Font-Size="11px" AppendDataBoundItems="True">
                             <asp:ListItem Text="Svi" Value="-1"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td style="width: 20%;" align="left">
-                        Dat. zavrs. od:
+                    <td style="width: 20%;" align="left">Dat. zavrs. od:
                         <asp:TextBox ID="txtZavrsOd" runat="server"></asp:TextBox>
                     </td>
-                    <td style="width: 20%;" align="left">
-                        Dat. zavrs. do:&nbsp;&nbsp;
+                    <td style="width: 20%;" align="left">Dat. zavrs. do:&nbsp;&nbsp;
                         <asp:TextBox ID="txtZavrsDo" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 20%;" align="left">
-                        Vrsta posla:
+                    <td align="left" class="auto-style1">Vrsta posla:
                         <asp:DropDownList ID="ddlVrsta" DataSourceID="dsVrsta" DataValueField="Sifra" runat="server"
                             Width="130px" Font-Size="11px" AppendDataBoundItems="True" DataTextField="Naziv">
                             <asp:ListItem Text="Svi" Value="-1"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td style="width: 20%;">
-                        Status:&nbsp;
+                    <td style="width: 20%;">Status:&nbsp;
                         <asp:DropDownList ID="ddlStatus" DataSourceID="dsStatus" DataValueField="Sifra" runat="server"
                             Width="130px" Font-Size="11px" AppendDataBoundItems="True" DataTextField="Naziv">
                             <asp:ListItem Text="Svi" Value="-1"></asp:ListItem>
@@ -291,19 +287,34 @@
                     <%-- <td style="width: 150px;">
         Naziv
     </td>--%>
-                    <td style="width: 15%;" align="left">
-                        Kat. opc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td style="width: 15%;" align="left">Kat. opc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="ddlKat" DataSourceID="dsKat" DataValueField="Sifra" runat="server"
                             Width="130px" Font-Size="11px" AppendDataBoundItems="True" DataTextField="Naziv">
                             <asp:ListItem Text="Svi" Value="-1"></asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td style="width: 15%" align="left">
-                        Naziv predmeta:
+                    <td style="width: 15%" align="left">Naziv predmeta:
                         <asp:TextBox ID="txtTraziPredmet" runat="server"></asp:TextBox>
                     </td>
                     <td style="width: 10%" align="left">
                         <asp:Button ID="btnTrazi" runat="server" Text="Traži" CssClass="botuni" OnClick="btnTrazi_Click" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 50%;" align="left">DGU datum podnošenja zahtjeva za pregled i ovjeru OD:
+                        <asp:TextBox ID="txtDguPodnesenOd" runat="server"></asp:TextBox>
+                    </td>
+                    <td style="width: 50%;" align="left">DGU datum podnošenja zahtjeva za pregled i ovjeru DO:
+                        <asp:TextBox ID="txtDguPodnesenDo" runat="server"></asp:TextBox>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td align="left" class="auto-style1">DGU datum potvrde elaborata OD:&nbsp;&nbsp;
+                        <asp:TextBox ID="txtDguPotvrdenOd" runat="server"></asp:TextBox>
+                    </td>
+                    <td style="width: 50%;" align="left">DGU datum potvrde elaborata DO:&nbsp;&nbsp;
+                        <asp:TextBox ID="txtDguPotvrdenDo" runat="server"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -313,7 +324,7 @@
                     EmptyDataText="There are no data records to display." CellPadding="4" GridLines="Both"
                     OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound"
                     OnPreRender="GridView1_PreRender" OnLoad="GridView1_Load" OnRowCommand="GridView1_RowCommand"
-                    AlternatingRowStyle-BackColor="AliceBlue" Height="95%" Width="98%" 
+                    AlternatingRowStyle-BackColor="AliceBlue" Height="95%" Width="98%"
                     ShowFooter="True">
                     <Columns>
                         <%--   <asp:TemplateField HeaderText="Putanja" 
@@ -343,7 +354,7 @@
                                 <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("arh_broj") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
-                                <asp:Label ID="lblUkPredmeta" runat="server" Text="Uk. predmeta:"  />
+                                <asp:Label ID="lblUkPredmeta" runat="server" Text="Uk. predmeta:" />
                             </FooterTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Poslovna godina" SortExpression="godina">
@@ -627,10 +638,8 @@
             &nbsp;&nbsp;&nbsp;
             <asp:ObjectDataSource ID="dsStatus" runat="server" SelectMethod="DohvatiStatuse"
                 TypeName="Geodezija.Helper"></asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="dsVrsta" runat="server" SelectMethod="DohvatiPosao" TypeName="Geodezija.Helper">
-            </asp:ObjectDataSource>
-            <asp:ObjectDataSource ID="dsKat" runat="server" SelectMethod="DohvatiKat" TypeName="Geodezija.Helper">
-            </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="dsVrsta" runat="server" SelectMethod="DohvatiPosao" TypeName="Geodezija.Helper"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="dsKat" runat="server" SelectMethod="DohvatiKat" TypeName="Geodezija.Helper"></asp:ObjectDataSource>
             <br />
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GeoistraConnectionString1 %>"
                 DeleteCommand="DELETE FROM [Projekt] WHERE [sifra] = @sifra" InsertCommand="INSERT INTO [Projekt] ([naziv], [dat_predajedgu], [dat_predaja], [ugov_iznos], [statusID], [kreirao], [vrstaID], [teren], [narucen_kat], [cijena_kat], [stigli_kat], [dgu_klasa], [dgu_uru], [lova], [kat_opc], [kat_cest], [dat_kreiranje], [putanja_projekt], [dat_azuriranja], [klijentID], [arh_broj], [pon_nar], [faktura], [opis_placanja], [placeno], [dat_potvrde], [racun_iznos], [ponuda_ind], [faktura_ind], [ponuda_sifra], [faktura_sifra], [dat_zavrs]) VALUES (@naziv, @dat_predajedgu, @dat_predaja, @ugov_iznos, @statusID, @kreirao, @vrstaID, @teren, @narucen_kat, @cijena_kat, @stigli_kat, @dgu_klasa, @dgu_uru, @lova, @kat_opc, @kat_cest, @dat_kreiranje, @putanja_projekt, @dat_azuriranja, @klijentID, @arh_broj, @pon_nar, @godina, @placeno, @dat_potvrde, @racun_iznos, @ponuda_ind, @faktura_ind, @ponuda_sifra, @faktura_sifra, @dat_zavrs)"
