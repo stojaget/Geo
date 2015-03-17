@@ -36,7 +36,7 @@
             <p>
                 &nbsp;</p>
             <p>
-                <asp:DropDownList ID="ddlVrsta" runat="server" Height="20px" Width="176px">
+                <asp:DropDownList ID="ddlVrsta" runat="server" Height="20px" Width="196px">
                     <asp:ListItem Value="0">Odaberite vrstu izvješća</asp:ListItem>
                     <asp:ListItem Value="1">Br. ugovorenih poslova</asp:ListItem>
                     <asp:ListItem Value="3">Br. obavljenih poslova</asp:ListItem>

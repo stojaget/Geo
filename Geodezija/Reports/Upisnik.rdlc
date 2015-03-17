@@ -16,15 +16,15 @@
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Center</TextAlign>
+              <TextAlign>Right</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
         <Top>0.33333in</Top>
-        <Left>4.46013in</Left>
+        <Left>4.35596in</Left>
         <Height>0.25in</Height>
-        <Width>2.75001in</Width>
+        <Width>2.85418in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -607,7 +607,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!dat_kreiranje.Value</Value>
+                              <Value>=CDate(Fields!dat_kreiranje.Value).ToString("dd.MM.yyyy")</Value>
                               <Style>
                                 <Format>dd/MM/yyyy</Format>
                               </Style>
@@ -628,7 +628,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -670,8 +669,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!dat_predajedgu.Value</Value>
-                              <Style />
+                              <Value>=CDate(Fields!dat_predajedgu.Value).ToString("dd.MM.yyyy")</Value>
+                              <Style>
+                                <Format>dd/MM/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -700,8 +701,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!dat_potvrde.Value</Value>
-                              <Style />
+                              <Value>=CDate(Fields!dat_potvrde.Value).ToString("dd.MM.yyyy")</Value>
+                              <Style>
+                                <Format>dd/MM/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -730,8 +733,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!dat_predaja.Value</Value>
-                              <Style />
+                              <Value>=CDate(Fields!dat_predaja.Value).ToString("dd.MM.yyyy")</Value>
+                              <Style>
+                                <Format>dd/MM/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
