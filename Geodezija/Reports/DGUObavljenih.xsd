@@ -2,14 +2,15 @@
 <xs:schema id="DGUObavljenih" targetNamespace="http://tempuri.org/DGUObavljenih.xsd" xmlns:mstns="http://tempuri.org/DGUObavljenih.xsd" xmlns="http://tempuri.org/DGUObavljenih.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="GeoistraConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GeoistraConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.GeoistraConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ApplicationServices" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ApplicationServices (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ApplicationServices.ConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spGodDguObavljeniTableAdapter" GeneratorDataComponentClassName="spGodDguObavljeniTableAdapter" Name="spGodDguObavljeni" UserDataComponentName="spGodDguObavljeniTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="GeoistraConnectionString1 (Web.config)" DbObjectName="dbo.spGodDguObavljeni" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ApplicationServices (Web.config)" DbObjectName="Geoistra.dbo.spGodDguObavljeni" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.spGodDguObavljeni</CommandText>
@@ -23,9 +24,10 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="BrPoslova" DataSetColumn="BrPoslova" />
               <Mapping SourceColumn="naziv" DataSetColumn="naziv" />
               <Mapping SourceColumn="sifra" DataSetColumn="sifra" />
+              <Mapping SourceColumn="BrUgovorenih" DataSetColumn="BrUgovorenih" />
+              <Mapping SourceColumn="BrPredanih" DataSetColumn="BrPredanih" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -37,10 +39,9 @@
   <xs:element name="DGUObavljenih" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DGUObavljenih" msprop:Generator_UserDSName="DGUObavljenih">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="spGodDguObavljeni" msprop:Generator_TableClassName="spGodDguObavljeniDataTable" msprop:Generator_TableVarName="tablespGodDguObavljeni" msprop:Generator_TablePropName="spGodDguObavljeni" msprop:Generator_RowDeletingName="spGodDguObavljeniRowDeleting" msprop:Generator_UserTableName="spGodDguObavljeni" msprop:Generator_RowChangingName="spGodDguObavljeniRowChanging" msprop:Generator_RowEvHandlerName="spGodDguObavljeniRowChangeEventHandler" msprop:Generator_RowDeletedName="spGodDguObavljeniRowDeleted" msprop:Generator_RowEvArgName="spGodDguObavljeniRowChangeEvent" msprop:Generator_RowChangedName="spGodDguObavljeniRowChanged" msprop:Generator_RowClassName="spGodDguObavljeniRow">
+        <xs:element name="spGodDguObavljeni" msprop:Generator_TableClassName="spGodDguObavljeniDataTable" msprop:Generator_TableVarName="tablespGodDguObavljeni" msprop:Generator_RowChangedName="spGodDguObavljeniRowChanged" msprop:Generator_TablePropName="spGodDguObavljeni" msprop:Generator_RowDeletingName="spGodDguObavljeniRowDeleting" msprop:Generator_RowChangingName="spGodDguObavljeniRowChanging" msprop:Generator_RowEvHandlerName="spGodDguObavljeniRowChangeEventHandler" msprop:Generator_RowDeletedName="spGodDguObavljeniRowDeleted" msprop:Generator_RowClassName="spGodDguObavljeniRow" msprop:Generator_UserTableName="spGodDguObavljeni" msprop:Generator_RowEvArgName="spGodDguObavljeniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="BrPoslova" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBrPoslova" msprop:Generator_ColumnPropNameInRow="BrPoslova" msprop:Generator_ColumnPropNameInTable="BrPoslovaColumn" msprop:Generator_UserColumnName="BrPoslova" type="xs:int" minOccurs="0" />
               <xs:element name="naziv" msprop:Generator_ColumnVarNameInTable="columnnaziv" msprop:Generator_ColumnPropNameInRow="naziv" msprop:Generator_ColumnPropNameInTable="nazivColumn" msprop:Generator_UserColumnName="naziv" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -49,6 +50,8 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="sifra" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnsifra" msprop:Generator_ColumnPropNameInRow="sifra" msprop:Generator_ColumnPropNameInTable="sifraColumn" msprop:Generator_UserColumnName="sifra" type="xs:int" />
+              <xs:element name="BrUgovorenih" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBrUgovorenih" msprop:Generator_ColumnPropNameInRow="BrUgovorenih" msprop:Generator_ColumnPropNameInTable="BrUgovorenihColumn" msprop:Generator_UserColumnName="BrUgovorenih" type="xs:int" minOccurs="0" />
+              <xs:element name="BrPredanih" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBrPredanih" msprop:Generator_ColumnPropNameInRow="BrPredanih" msprop:Generator_ColumnPropNameInTable="BrPredanihColumn" msprop:Generator_UserColumnName="BrPredanih" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

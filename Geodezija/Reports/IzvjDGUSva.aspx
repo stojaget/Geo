@@ -38,8 +38,8 @@
             <p>
                 <asp:DropDownList ID="ddlVrsta" runat="server" Height="20px" Width="196px">
                     <asp:ListItem Value="0">Odaberite vrstu izvješća</asp:ListItem>
-                    <asp:ListItem Value="1">Br. ugovorenih poslova</asp:ListItem>
-                    <asp:ListItem Value="3">Br. obavljenih poslova</asp:ListItem>
+                    <asp:ListItem Value="1">Godišnje izvješće</asp:ListItem>
+                   
                     <asp:ListItem Value="2">Upisnik obavljanja djelatnosti</asp:ListItem>
                 </asp:DropDownList>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

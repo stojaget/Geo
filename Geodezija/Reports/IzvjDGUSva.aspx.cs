@@ -43,13 +43,12 @@ namespace Geodezija.Reports
         {
             switch (ddlVrsta.SelectedIndex)
             {
-                case 1: PokaziReport(odd, dod, "spGodisnjeDgu", Server.MapPath(@"~\Reports\DGUUkupno.rdlc"));
+                case 1: PokaziReport(odd, dod, "spGodDguObavljeni", Server.MapPath(@"~\Reports\DGUObavljeni.rdlc"));
                     break;
-                case 3: PokaziReport(odd, dod, "spUpisnik", Server.MapPath(@"~\Reports\Upisnik.rdlc")); 
+                case 2: PokaziReport(odd, dod, "spUpisnik", Server.MapPath(@"~\Reports\Upisnik.rdlc")); 
                    
                     break;
-                case 2:  PokaziReport(odd, dod, "spGodisnjeDguPredani", Server.MapPath(@"~\Reports\DGUPredani.rdlc"));
-                    break;
+                
                
                 default:
                     break;
