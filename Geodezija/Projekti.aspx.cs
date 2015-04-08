@@ -14,6 +14,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using System.Web.Security;
 
 namespace Geodezija
 {
@@ -23,6 +24,12 @@ namespace Geodezija
         decimal ukLova = 0.00M;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
+            if (Roles.IsUserInRole("Pripravnik"))
+            {
+                Response.Redirect("PrProjekti.aspx");
+            }
 
             GridView1.HeaderStyle.ForeColor = System.Drawing.Color.Black;
             //  GridView1.AlternatingRowStyle.BackColor = System.Drawing.Color.Green;
@@ -31,10 +38,7 @@ namespace Geodezija
                 ClientScript.RegisterStartupScript(this.GetType(), "CreateGridHeader", "<script>CreateGridHeader('DataDiv', 'GridView1', 'HeaderDiv');</script>");
             }
 
-            if (User.IsInRole("Pripravnik"))
-            {
-                Response.Redirect("PrProjekti.aspx");
-            }
+
 
             if (!IsPostBack)
             {
@@ -88,7 +92,7 @@ namespace Geodezija
         }
         private void NapuniGrid()
         {
-            DateTime odd, dod, dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
+            DateTime odd, dod; // dguPodnesenOD dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
             odd = new DateTime(2001, 1, 1);
             dod = new DateTime(2055, 1, 1);
             int vrsta = -1;
@@ -96,10 +100,10 @@ namespace Geodezija
             string kat = "";
             int klijent = -1;
             string zavrsio = "";
-            dguPodnesenOD = new DateTime(2001, 1, 1);
-            dguPodnesenDO = new DateTime(2055, 1, 1);
-            dguPotvrdenOD = new DateTime(2001, 1, 1);
-            dguPotvrdenDO = new DateTime(2055, 1, 1);
+            //dguPodnesenOD = new DateTime(2001, 1, 1);
+            //dguPodnesenDO = new DateTime(2055, 1, 1);
+            //dguPotvrdenOD = new DateTime(2001, 1, 1);
+            //dguPotvrdenDO = new DateTime(2055, 1, 1);
 
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["GeoistraConnectionString1"].ConnectionString;
@@ -114,10 +118,10 @@ namespace Geodezija
             cmd.Parameters.AddWithValue("@ZAVRSIO", DBNull.Value);
             cmd.Parameters.AddWithValue("@OD", odd);
             cmd.Parameters.AddWithValue("@DO", dod);
-            cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
-            cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
-            cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
-            cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dset = new DataSet();
             adapter.Fill(dset, "t1");
@@ -549,7 +553,7 @@ namespace Geodezija
             //,'Sebina', 'sebina') FROM Projekt WHERE CHARINDEX('Sebina',CAST(zavrsio as nvarchar(50)))>0
 
 
-            DateTime odd, dod, dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
+            DateTime odd, dod; // dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
             int vrsta = Convert.ToInt32(ddlVrsta.SelectedValue);
             int status = Convert.ToInt32(ddlStatus.SelectedValue);
             int kat = Convert.ToInt32(ddlKat.SelectedValue);
@@ -570,38 +574,38 @@ namespace Geodezija
             {
                 dod = Convert.ToDateTime(txtZavrsDo.Text);
             }
-            if (txtDguPodnesenOd.Text == string.Empty)
-            {
-                dguPodnesenOD  = new DateTime(2001, 1, 1);
-            }
-            else
-            {
-                dguPodnesenOD = Convert.ToDateTime(txtDguPodnesenOd.Text);
-            }
-            if (txtDguPodnesenDo.Text == string.Empty)
-            {
-                dguPodnesenDO = DateTime.Now.AddYears(10);
-            }
-            else
-            {
-                dguPodnesenDO = Convert.ToDateTime(txtDguPodnesenDo.Text);
-            }
-            if (txtDguPotvrdenOd.Text== string.Empty)
-            {
-                dguPotvrdenOD = new DateTime(2001, 1, 1);
-            }
-            else
-            {
-                dguPotvrdenOD = Convert.ToDateTime(txtDguPotvrdenOd.Text);
-            }
-            if (txtDguPotvrdenDo.Text == string.Empty)
-            {
-                dguPotvrdenDO = DateTime.Now.AddYears(10);
-            }
-            else
-            {
-                dguPotvrdenDO = Convert.ToDateTime(txtDguPotvrdenDo.Text);
-            }
+            //if (txtDguPodnesenOd.Text == string.Empty)
+            //{
+            //    dguPodnesenOD  = new DateTime(2001, 1, 1);
+            //}
+            //else
+            //{
+            //    dguPodnesenOD = Convert.ToDateTime(txtDguPodnesenOd.Text);
+            //}
+            //if (txtDguPodnesenDo.Text == string.Empty)
+            //{
+            //    dguPodnesenDO = DateTime.Now.AddYears(10);
+            //}
+            //else
+            //{
+            //    dguPodnesenDO = Convert.ToDateTime(txtDguPodnesenDo.Text);
+            //}
+            //if (txtDguPotvrdenOd.Text== string.Empty)
+            //{
+            //    dguPotvrdenOD = new DateTime(2001, 1, 1);
+            //}
+            //else
+            //{
+            //    dguPotvrdenOD = Convert.ToDateTime(txtDguPotvrdenOd.Text);
+            //}
+            //if (txtDguPotvrdenDo.Text == string.Empty)
+            //{
+            //    dguPotvrdenDO = DateTime.Now.AddYears(10);
+            //}
+            //else
+            //{
+            //    dguPotvrdenDO = Convert.ToDateTime(txtDguPotvrdenDo.Text);
+            //}
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["GeoistraConnectionString1"].ConnectionString;
             conn.Open();
@@ -656,10 +660,111 @@ namespace Geodezija
 
             cmd.Parameters.AddWithValue("@OD", odd);
             cmd.Parameters.AddWithValue("@DO", dod);
-            cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
-            cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
-            cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
-            cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataSet dset = new DataSet();
+            adapter.Fill(dset, "t1");
+            var result = cmd.ExecuteReader();
+            GridView1.EmptyDataText = "No Records Found";
+
+            GridView1.DataSource = dset.Tables["t1"];
+            GridView1.DataBind();
+
+            conn.Close();
+        }
+
+
+
+        protected void btnKatPred_Click(object sender, EventArgs e)
+        {
+            //ovo je da preimenuje iz velikog u mala slova
+            // UPDATE Projekt SET zavrsio = REPLACE(CAST(zavrsio AS varchar(MAX))
+            //,'Sebina', 'sebina') FROM Projekt WHERE CHARINDEX('Sebina',CAST(zavrsio as nvarchar(50)))>0
+
+
+            DateTime odd, dod; // dguPodnesenOD, dguPotvrdenOD, dguPodnesenDO, dguPotvrdenDO;
+            int vrsta = Convert.ToInt32(ddlVrsta.SelectedValue);
+            int status = Convert.ToInt32(ddlStatus.SelectedValue);
+            int kat = Convert.ToInt32(ddlKat.SelectedValue);
+            string zavrs = ddlZavrsio.SelectedItem.Text;
+            int klijent = Convert.ToInt32(ddlKlij.SelectedValue);
+            string naziv = txtTraziPredmet.Text;
+            if (txtZavrsOd.Text == string.Empty)
+            { odd = new DateTime(2001, 1, 1); }
+            else
+            {
+                odd = Convert.ToDateTime(txtZavrsOd.Text);
+            }
+            if (txtZavrsDo.Text == string.Empty)
+            {
+                dod = DateTime.Now.AddYears(10);
+            }
+            else
+            {
+                dod = Convert.ToDateTime(txtZavrsDo.Text);
+            }
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["GeoistraConnectionString1"].ConnectionString;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("dbo.spProjBezPotvrde", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            if (status == -1)
+            {
+                cmd.Parameters.AddWithValue("@STATUS", DBNull.Value);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@STATUS", status);
+            }
+            if (vrsta == -1)
+            {
+                cmd.Parameters.AddWithValue("@VRSTA", DBNull.Value);
+
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@VRSTA", vrsta);
+            }
+            if (kat == -1)
+            {
+                cmd.Parameters.AddWithValue("@KAT", DBNull.Value);
+
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@KAT", kat);
+            }
+            if (klijent == -1)
+            {
+                cmd.Parameters.AddWithValue("@KLIJENT", DBNull.Value);
+
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@KLIJENT", klijent);
+            }
+            cmd.Parameters.AddWithValue("@NAZIV", naziv);
+            if (zavrs == "Svi")
+            {
+                cmd.Parameters.AddWithValue("@ZAVRSIO", DBNull.Value);
+
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ZAVRSIO", zavrs);
+            }
+
+            cmd.Parameters.AddWithValue("@OD", odd);
+            cmd.Parameters.AddWithValue("@DO", dod);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENOD", dguPodnesenOD);
+            //cmd.Parameters.AddWithValue("@DGUPODNESENDO", dguPodnesenDO);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENOD", dguPotvrdenOD);
+            //cmd.Parameters.AddWithValue("@DGUPOTVRDENDO", dguPotvrdenDO);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dset = new DataSet();
             adapter.Fill(dset, "t1");
@@ -727,6 +832,8 @@ namespace Geodezija
             }
             return index;
         }
+
+
 
 
 

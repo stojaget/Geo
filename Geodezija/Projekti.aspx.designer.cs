@@ -94,6 +94,15 @@ namespace Geodezija {
         protected global::System.Web.UI.WebControls.TextBox txtZavrsDo;
         
         /// <summary>
+        /// btnKatPred control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnKatPred;
+        
+        /// <summary>
         /// ddlVrsta control.
         /// </summary>
         /// <remarks>
@@ -137,42 +146,6 @@ namespace Geodezija {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnTrazi;
-        
-        /// <summary>
-        /// txtDguPodnesenOd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDguPodnesenOd;
-        
-        /// <summary>
-        /// txtDguPodnesenDo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDguPodnesenDo;
-        
-        /// <summary>
-        /// txtDguPotvrdenOd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDguPotvrdenOd;
-        
-        /// <summary>
-        /// txtDguPotvrdenDo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDguPotvrdenDo;
         
         /// <summary>
         /// GridView1 control.

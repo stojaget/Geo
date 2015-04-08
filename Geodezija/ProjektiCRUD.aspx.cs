@@ -14,6 +14,7 @@ using System.Data.SqlTypes;
 using jQueryNotification.Helper;
 using System.Drawing;
 using System.Text;
+using System.Web.Security;
 
 
 
@@ -39,7 +40,8 @@ namespace Geodezija
             lblUser.Text = User.Identity.Name;
             int projID = Convert.ToInt32(Request.QueryString["ID"]);
 
-            if (User.IsInRole("Pripravnik"))
+
+            if (Roles.IsUserInRole("Pripravnik"))
             {
                 //sakri iznose
                 txtIznFakt.Visible = false;

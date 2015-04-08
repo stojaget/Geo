@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Drawing;
 using System.Web.Security;
 using jQueryNotification.Helper;
+using System.Text;
 namespace Geodezija
 {
     public partial class User_List1 : System.Web.UI.Page
@@ -132,7 +133,7 @@ namespace Geodezija
                     if (IsNullOrEmpty(role))
                     {
                         rola = string.Empty;
-                      //  this.ShowErrorNotification("Odabrani korisnik nema rolu u sustavu.Nije moguće napraviti promjenu");
+                        //  this.ShowErrorNotification("Odabrani korisnik nema rolu u sustavu.Nije moguće napraviti promjenu");
                         return;
                     }
                     else
@@ -140,11 +141,11 @@ namespace Geodezija
                         rola = role[0].ToString();
                         Roles.RemoveUserFromRole(txtUser.Text, rola);
                         Roles.AddUserToRole(txtUser.Text, ddlRola.SelectedItem.Text);
-this.ShowSuccessfulNotification(poruka, 3000);
+                        this.ShowSuccessfulNotification(poruka, 3000);
                     }
 
 
-                    
+
                 }
                 else
                 {
@@ -170,6 +171,28 @@ this.ShowSuccessfulNotification(poruka, 3000);
                 this.ShowSuccessfulNotification(poruka, 3000);
             }
         }
+
+
+
+        protected void btnObrisi_Click(object sender, EventArgs e)
+        {
+            string confirmValue = Request.Form["confirm_value"];
+            if (confirmValue == "DA")
+            {
+                //this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Obrisati će se korisnik')", true);
+                Membership.DeleteUser(txtUser.Text, false);
+                this.ShowSuccessfulNotification("Uspješno je obrisan korisnik " + txtUser.Text);
+                GridView1.DataBind();
+            }
+            else
+            {
+                this.Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Otkaži brisanje')", true);
+            }
+           
+
+
+        }
+
 
 
 

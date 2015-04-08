@@ -27,7 +27,7 @@ namespace Geodezija
            lblUser.Text = Membership.GetUser().UserName;
            if (User.IsInRole("Pripravnik"))
            {
-               Response.Redirect("PrPocetna.aspx");
+               Response.Redirect("PrProjekti.aspx");
            }
             if (!IsPostBack)
             {

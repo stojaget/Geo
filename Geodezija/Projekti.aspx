@@ -25,10 +25,10 @@
 
             $("#<%= txtZavrsOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
             $("#<%= txtZavrsDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
-            $("#<%= txtDguPodnesenOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+          <%--  $("#<%= txtDguPodnesenOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
             $("#<%= txtDguPodnesenDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
             $("#<%= txtDguPotvrdenOd.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
-            $("#<%= txtDguPotvrdenDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });
+            $("#<%= txtDguPotvrdenDo.ClientID %>").datepick({ dateFormat: 'dd/mm/yyyy', showAnim: 'fadeIn' });--%>
             $.datepick.setDefaults($.datepick.regional['hr']);
         });
     </script>
@@ -223,7 +223,7 @@
             color: Black;
         }
         .auto-style1 {
-            width: 50%;
+            width: 24%;
         }
     </style>
 </asp:Content>
@@ -270,6 +270,9 @@
                     <td style="width: 20%;" align="left">Dat. zavrs. do:&nbsp;&nbsp;
                         <asp:TextBox ID="txtZavrsDo" runat="server"></asp:TextBox>
                     </td>
+                    <td>
+                         <asp:Button ID="btnKatPred" runat="server" Text="Kat. predmeti" CssClass="botuni" OnClick="btnKatPred_Click" />
+                    </td>
                 </tr>
                 <tr>
                     <td align="left" class="auto-style1">Vrsta posla:
@@ -300,7 +303,7 @@
                         <asp:Button ID="btnTrazi" runat="server" Text="Traži" CssClass="botuni" OnClick="btnTrazi_Click" />
                     </td>
                 </tr>
-                <tr>
+               <%-- <tr>
                     <td style="width: 50%;" align="left">DGU datum podnošenja zahtjeva za pregled i ovjeru OD:
                         <asp:TextBox ID="txtDguPodnesenOd" runat="server"></asp:TextBox>
                     </td>
@@ -316,7 +319,7 @@
                     <td style="width: 50%;" align="left">DGU datum potvrde elaborata DO:&nbsp;&nbsp;
                         <asp:TextBox ID="txtDguPotvrdenDo" runat="server"></asp:TextBox>
                     </td>
-                </tr>
+                </tr>--%>
             </table>
             <div id="DataDiv" style="overflow: auto; border: 1px solid olive; width: 98%; height: 700px;"
                 onscroll="Onscrollfnction();">

@@ -4,6 +4,21 @@
     <link rel="Stylesheet" type="text/css" href="Styles/CustomView.css" />
      <link href="Styles/jquery.jnotify.css" rel="stylesheet" type="text/css" />
     <script src="Scripts/jquery.jnotify.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function Confirm()
+        {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Želite obrisati korisnika?")) {
+                confirm_value.value = "DA";
+            }
+            else {
+                confirm_value.value = "NE";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
     <div id="adminedit">
         <a name="content_start" id="content_start"></a>
         <fieldset>
@@ -106,7 +121,10 @@
                              </td>
                              <td>
                                  <asp:Button ID="btnOtkljucaj" runat="server" CssClass="botuni" OnClick="btnOtkljucaj_Click" Text="Otključaj" />
+                                 &nbsp;&nbsp;
+                                 <asp:Button ID="btnObrisi" runat="server" CssClass="botuni" OnClick="btnObrisi_Click" OnClientClick="Confirm()" Text="Izbriši" />
                              </td>
+                             
                              <td>
                                  &nbsp;</td>
                          </tr>

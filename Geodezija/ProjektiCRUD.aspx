@@ -237,13 +237,13 @@
         }
         .style16
         {
-            width: 381px;  padding-left:180px;
+            width: 381px;  padding-left:20px;
         }
         .style19
         {
-            height: 38px;
+            height: 68px;
             width: 381px;
-             padding-left:360px;
+             padding-left:160px;
         }
         .style20
         {
@@ -404,7 +404,7 @@
         .style128
         {
             width: 296px;
-            height: 51px;
+            height: 61px;
         }
         .style129
         {
@@ -424,6 +424,66 @@
         {
             width: 296px;
             height: 44px;
+        }
+        .auto-style1 {
+            width: 136px;
+            height: 38px;
+        }
+        .auto-style2 {
+            width: 136px;
+            height: 30px;
+        }
+        .auto-style3 {
+            width: 136px;
+            height: 44px;
+        }
+        .auto-style4 {
+            height: 51px;
+            width: 136px;
+        }
+        .auto-style5 {
+            height: 21px;
+            width: 136px;
+        }
+        .auto-style6 {
+            width: 136px;
+            height: 59px;
+        }
+        .auto-style7 {
+            width: 136px;
+            height: 33px;
+        }
+        .auto-style8 {
+            width: 136px;
+            height: 31px;
+        }
+        .auto-style9 {
+            width: 136px;
+            height: 29px;
+        }
+        .auto-style10 {
+            width: 136px;
+            height: 49px;
+        }
+        .auto-style11 {
+            width: 136px;
+            height: 62px;
+        }
+        .auto-style12 {
+            width: 136px;
+            height: 28px;
+        }
+        .auto-style13 {
+            width: 216px;
+            height: 48px;
+        }
+        .auto-style14 {
+            width: 136px;
+            height: 32px;
+        }
+        .auto-style15 {
+            width: 136px;
+            height: 16px;
         }
     </style>
     <script type="text/javascript">
@@ -481,27 +541,28 @@
             </legend>
             <table class="style42">
                 <tr>
-                    <td class="style27">
-                        Zadnji arhivski:</td>
+                    <td class="auto-style1">
+                        &nbsp;</td>
                     <td class="style28">
                         <asp:TextBox ID="txtArhZadnji" runat="server" Width="281px" CssClass="Tab" 
-                            ForeColor="Red"></asp:TextBox>
+                            ForeColor="Red" Visible="False"></asp:TextBox>
                     </td>
                     <td class="style19">
                         <%-- OnClientClick="return ConfirmDialog(this, 'Potvrda', 'Želite spremiti zapis?');"--%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                        <asp:Button ID="btnUnos" runat="server" Text="Unos" Width="91px" 
-                            OnClick="btnUnos_Click" CssClass="botuni" Height="27px" />
                         &nbsp;
                         <asp:Button ID="btnPovratak" runat="server" Text="Povratak" Width="91px" OnClick="btnPovratak_Click"
                             CssClass="botuni" CausesValidation="False" PostBackUrl="~/Projekti.aspx" 
                             Height="27px" />
-                        &nbsp;
+                        &nbsp;&nbsp;
                         <asp:Button ID="btnPrilozi" runat="server" Text="Prilozi" Width="91px" 
                             OnClick="btnPrilozi_Click" CssClass="botuni" Height="27px" />
+                        &nbsp;&nbsp;
+                        <asp:Button ID="btnUnos" runat="server" Text="Unos" Width="91px" 
+                            OnClick="btnUnos_Click" CssClass="botuni" Height="27px" />
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Arhivski broj:
                     </td>
                     <td class="style44">
@@ -513,7 +574,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Poslovna godina:
                         </td>
                     <td class="style44">
@@ -525,11 +586,11 @@
                         </td>
                     <td class="style16" rowspan="15" >
                         <asp:TextBox ID="txtPutProj" runat="server" Width="580px" TextMode="MultiLine" 
-                            Height="643px"></asp:TextBox>
+                            Height="1144px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style120">
+                    <td class="auto-style3">
                         Vrsta posla:
                         </td>
                     <td class="style133">
@@ -542,18 +603,18 @@
                     </td>
                 </tr>
                 <tr >
-                    <td valign="top" class="style127">
+                    <td valign="top" class="auto-style4">
                         Opis projekta:
                         <asp:RequiredFieldValidator ID="rfvNaziv" runat="server" ControlToValidate="txtNaziv"
                             ErrorMessage="Naziv je obavezno polje" SetFocusOnError="True">*</asp:RequiredFieldValidator>
                         </td>
                     <td class="style128">
-                        <asp:TextBox ID="txtNaziv" runat="server" Width="507px" Height="56px" style="text-align: left" 
+                        <asp:TextBox ID="txtNaziv" runat="server" Width="507px" Height="66px" style="text-align: left" 
                             TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="style131">
+                    <td class="auto-style5">
                         Status:
                         </td>
                     <td class="style132">
@@ -567,7 +628,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style129">
+                    <td class="auto-style6">
                         Naručitelj:
                         </td>
                     <td class="style39">
@@ -794,7 +855,7 @@
                     <td class="style112">
                     </td>
                 </tr>
-                <td class="style49">
+                <td class="auto-style7">
                     Kat. općina:
                 </td>
                 <td class="style50">
@@ -808,7 +869,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Kat. čestica:
                     </td>
                     <td class="style44">
@@ -817,8 +878,8 @@
                    
                 </tr>
                 <tr>
-                    <td class="style51">
-                        Otvorio predmet:
+                    <td class="auto-style8">
+                        Zadnji promijenio:
                     </td>
                     <td class="style52">
                         <asp:TextBox ID="txtKreirao" style="text-align: left"  runat="server" Width="281px" ReadOnly="True"></asp:TextBox>
@@ -826,7 +887,7 @@
                    
                 </tr>
                 <tr>
-                    <td class="style51">
+                    <td class="auto-style8">
                         Dat. kreiranja:
                     </td>
                     <td class="style52">
@@ -835,7 +896,7 @@
                    
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Planirani završetak:
                     </td>
                     <td class="style44">
@@ -850,7 +911,7 @@
                   
                 </tr>
                 <tr>
-                    <td class="style55">
+                    <td class="auto-style9">
                         Naručen katastar:
                     </td>
                     <td class="style56">
@@ -860,7 +921,7 @@
                    
                 </tr>
                 <tr>
-                    <td class="style55">
+                    <td class="auto-style9">
                         Stigli podaci katastar:
                     </td>
                     <td class="style56">
@@ -870,7 +931,7 @@
                    
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Iznos pristojbi:
                     </td>
                     <td class="style44">
@@ -886,7 +947,7 @@
                     
                 </tr>
                 <tr>
-                    <td class="style88">
+                    <td class="auto-style9">
                         Dat. završetka:
                     </td>
                     <td class="style56">
@@ -900,7 +961,7 @@
                         </td>
                 </tr>
                 <tr>
-                    <td class="style21">
+                    <td class="auto-style10">
                         Projekt završio:
                     </td>
                     <td class="style11">
@@ -928,14 +989,14 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Ugov. iznos:
                     </td>
                     <td class="style44">
                         <asp:TextBox ID="txtIznos" runat="server" Width="281px" 
                             ToolTip="Decimalni broj, zarezom odvojite" ClientIDMode="Static"></asp:TextBox>
                     </td>
-                    <td class="style16" rowspan="16">
+                    <td class="style16" rowspan="16" style="padding-left:20px;">
                         &nbsp;
                         &nbsp;
                         &nbsp;
@@ -956,7 +1017,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Iznos fakture:
                     </td>
                     <td class="style44">
@@ -965,7 +1026,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Lova:
                     </td>
                     <td class="style44">
@@ -974,7 +1035,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style118">
+                    <td class="auto-style2">
                         Ponuda/ nar.:
                     </td>
                     <td class="style44">
@@ -982,7 +1043,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style62">
+                    <td class="auto-style11">
                         Poslana faktura
                         <asp:CheckBox ID="chkFakturaPoslana" runat="server" OnCheckedChanged="chkFakturaPoslana_CheckedChanged"
                             AutoPostBack="True" />
@@ -1000,7 +1061,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style64">
+                    <td class="auto-style12">
                         Plaćeno:
                     </td>
                     <td class="style65">
@@ -1013,7 +1074,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style66">
+                    <td class="auto-style13">
                         DGU DAT. PODNOŠENJA ZAHTJEVA ZA PREGLED I OVJERU:
                     </td>
                     <td class="style13">
@@ -1026,7 +1087,7 @@
                 </tr>
                
                 <tr>
-                    <td class="style66">
+                    <td class="auto-style13">
                         DGU DAT. POTVRDE ELABORATA:
                     </td>
                     <td class="style13">
@@ -1038,7 +1099,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         DGU KLASA ZAPRIMLJENOG PREDMETA:
                     </td>
                     <td class="style44">
@@ -1046,7 +1107,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         DGU URUDŽBENI:
                     </td>
                     <td class="style44">
@@ -1055,7 +1116,7 @@
                 </tr>
                
                     <tr>
-                    <td class="style66">
+                    <td class="auto-style13">
                         PREDAJA ELABORATA NARUČITELJU:
                     </td>
                     <td class="style13">
@@ -1067,7 +1128,7 @@
                     </td>
                 </tr>
                     <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Dat. ažuriranja:
                     </td>
                     <td class="style44">
@@ -1075,7 +1136,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style59" valign="top">
+                    <td class="auto-style14" valign="top">
                     </td>
                     <td class="style60">
                         <asp:ValidationSummary ID="vsProjekt" runat="server" ForeColor="Red" 
@@ -1083,7 +1144,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style43">
+                    <td class="auto-style2">
                         Šifra:
                     </td>
                     <td class="style44">
@@ -1091,13 +1152,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="style3">
+                    <td class="auto-style15">
                     </td>
                     <td class="style15">
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="style21">
+                    <td class="auto-style10">
                         <br />
                         <asp:Button ID="Button1" runat="server" CssClass="botuni" OnClick="Button1_Click"
                             Text="Uplatnica" Width="87px" />
